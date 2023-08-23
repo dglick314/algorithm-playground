@@ -3,28 +3,27 @@
 ### User Input, Text scanning, loops and arithmetic.  
 import re
 
+#initialization
 userInput = ""
 output = ""
 signCheck = ""
-num = 0
 x=0
 y=0
 
+## Definitions
 def add(x,y):
     return x+y
 def subtract(x,y):
     return x-y
-def multiply():
+def multiply(x,y):
     return x*y
-def divide():
+def divide(x,y):
     return x/y
-
+## Main
 print("Hello, this is a calculator app. The following operations are supported.\n To add use +\n To subtract use -\nTo multiply use *\nTo divide use /\n\nThat concludes the available operations.\n")
-userInput = input('Input the problem: ')
-numbers = [float(num) for num in re.findall(r'\d+', userInput)]
-x= numbers[0]
-y= numbers[1]
-
+userInput = input('Input the method + , - , * , /: ')
+x = float(input('Enter the first value: '))
+y = float(input('Enter the second value: '))
 
 for signCheck in userInput: 
     if(signCheck == "+"):
