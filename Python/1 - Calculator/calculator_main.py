@@ -1,22 +1,43 @@
 ### Calculator Project to study how python operations are done.
 ### This project is pretty simple and goes over the following operations
 ### User Input, Text scanning, loops and arithmetic.  
-
-
+import re
 
 userInput = ""
-x = ""
+output = ""
+signCheck = ""
+num = 0
+x=0
+y=0
+
+def add(x,y):
+    return x+y
+def subtract(x,y):
+    return x-y
+def multiply():
+    return x*y
+def divide():
+    return x/y
+
 print("Hello, this is a calculator app. The following operations are supported.\n To add use +\n To subtract use -\nTo multiply use *\nTo divide use /\n\nThat concludes the available operations.\n")
 userInput = input('Input the problem: ')
-for x in userInput: 
-    if(x == "+"):
+numbers = [float(num) for num in re.findall(r'\d+', userInput)]
+x= numbers[0]
+y= numbers[1]
+
+
+for signCheck in userInput: 
+    if(signCheck == "+"):
         print("TEST : +!!")
-
-    if(x == "-"):
+        output = add(x,y)
+    if(signCheck == "-"):
         print("TEST : -!!")
-
-    if(x == "*"):
+        output = subtract(x,y)
+    if(signCheck == "*"):
         print("TEST : *!!")
-
-    if(x == "/"):
+        output = multiply(x,y)
+    if(signCheck == "/"):
         print("TEST : /!!")
+        output = divide(x,y)
+
+print("Solution: ", output)
